@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        textarea {
+            margin-top: 20px;
+            width: 80%;
+            /* align-items: center; */
+            resize: none;
+            height: 70px;
+        }
+        
+        button {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <input type="text" name="" id="id1" placeholder="id">
+        <br>
+        <input type="text" name="" id="label" placeholder="label">
+        <br>
+        <input type="text" placeholder="attributes" id="attributes">
+        <br>
+        <input type="text" placeholder="content" id="content">
+        <br>
+        <button onclick="out()">Generate</button>
+        <br>
+        <textarea id="output"></textarea>
+    </center>
+</body>
+<script>
+    function out() {
+        let id1 = document.getElementById('id1').value;
+        let label = document.getElementById('label').value;
+        let attributes = document.getElementById('attributes').value;
+        let content = document.getElementById('content').value;
+        console.log(id1)
+        let out = `
+    
+    {
+        id: '${id1}',
+        attributes: { class: '${attributes}' },
+        content: '${content}',
+        label: '${label}',
+    },
+        `
+        document.getElementById('output').innerText = out
+    }
+</script>
+
+</html>
